@@ -53,11 +53,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_div" />
 
+    <Button
+        android:text="나누기 몫"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_mod" />
+
     <TextView
         android:text="계산결과 : "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorLink="@android:color/holo_red_dark"
+        android:textColorLink="?android:attr/colorPressedHighlight"
         android:textSize="24sp"
         android:id="@+id/lbl_result"
         android:layout_weight="0.26" />
