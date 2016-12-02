@@ -7,17 +7,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
 public class Main2Activity extends AppCompatActivity {
     Button bt_selected;
-    TextView tbx_pet;
     CheckBox cbx_start;
     LinearLayout laypet;
-    RadioButton rad_dog,rad_cat,rad_rab;
+    RadioGroup rad_mas;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +28,9 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         cbx_start = (CheckBox)findViewById(R.id.cbx_start);
         laypet = (LinearLayout)findViewById(R.id.lay_pet);
-        tbx_pet = (TextView)findViewById(R.id.tbx_pet);
-        rad_dog = (RadioButton)findViewById(R.id.btn_dog);
-        rad_cat = (RadioButton)findViewById(R.id.btn_cat);
-        rad_rab = (RadioButton)findViewById(R.id.btn_rabbit);
+        rad_mas = (RadioGroup)findViewById(R.id.rad_master);
         bt_selected = (Button)findViewById(R.id.btn_selected);
+        img = (ImageView) findViewById(R.id.img_view);
 
         cbx_start.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -42,6 +43,22 @@ public class Main2Activity extends AppCompatActivity {
                 }
             }
         });
+
+        bt_selected.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(rad_mas.getCheckedRadioButtonId()==R.id.btn_dog){
+                    img.setImageResource(R.drawable.dog);
+                }
+                else if(rad_mas.getCheckedRadioButtonId()==R.id.btn_cat){
+                    img.setImageResource(R.drawable.cat);
+                }
+                else{
+                    img.setImageResource(R.drawable.rabbit);
+                }
+            }
+        });
+
 
         setTitle("애완동물 고르기");
     }
