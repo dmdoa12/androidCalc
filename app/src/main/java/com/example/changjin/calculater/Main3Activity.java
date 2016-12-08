@@ -63,6 +63,13 @@ public class Main3Activity extends AppCompatActivity {
                 finish();
             }
         });
+        bt_clean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                swi_start.setChecked(false);
+                layand.setVisibility(View.INVISIBLE);
+            }
+        });
 
         setTitle("안드로이드 고르기");
     }

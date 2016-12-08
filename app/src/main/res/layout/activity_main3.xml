@@ -23,7 +23,8 @@
         android:text="시작함"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/swi_start" />
+        android:id="@+id/swi_start"
+        android:checked="false" />
 
     <LinearLayout
         android:orientation="vertical"
